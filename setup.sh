@@ -1,7 +1,3 @@
-
-
-#az ml job create --file ./mslearn-mlops1/src/job.yml --workspace-name wks-dp100-mlops --resource-group rg-dp100-mlops
-
 #! /usr/bin/sh
 
 # Create random string
@@ -43,4 +39,18 @@ az ml compute create --name ${COMPUTE_INSTANCE} --size STANDARD_DS1_V2 --type Co
 # Create data assets
 echo "Create training data asset:"
 az ml data create --type uri_file --name diabetes-dev-folder --path  ./experimentation/data/
+
+# install the Azure Machine Learning extension.
+az extension add -n ml -y
+
+# submit an Azure Machine Learning job
+az ml job create --file ./src/job.yml
+
+
+
+# After all the resources are created, launch ML Studio, open the terminal of the compute instance and type:
+# pip uninstall azure-ai-ml
+# pip install azure-ai-ml
+
+
 
