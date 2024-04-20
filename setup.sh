@@ -38,7 +38,7 @@ az ml compute create --name ${COMPUTE_CLUSTER} --size STANDARD_DS11_V2 --max-ins
 
 # Create data assets
 echo "Create training data asset:"
-az ml data create --type uri_file --name diabetes-dev-folder --path  ./experimentation/data/
+az ml data create --type uri_folder --name diabetes-dev-folder --path  ./experimentation/data/
 
 # install the Azure Machine Learning extension.
 echo "Install the Azure Machine Learning extension"
