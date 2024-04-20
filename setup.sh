@@ -1,5 +1,4 @@
-#az ml data create --name diabetes-dev --version 1 --path https://github.com/ahmetyazar/mslearn-mlops1/tree/main/experimentation/data/diabetes-dev.csv --resource-group rg-dp100-mlops --workspace-name wks-dp100-mlops
-#az ml data create --name diabetes-dev-folder --version 1 --path https://github.com/ahmetyazar/mslearn-mlops1/tree/main/experimentation/data/ --resource-group rg-dp100-mlops --workspace-name wks-dp100-mlops
+
 
 #az ml job create --file ./mslearn-mlops1/src/job.yml --workspace-name wks-dp100-mlops --resource-group rg-dp100-mlops
 
@@ -40,3 +39,8 @@ az ml compute create --name ${COMPUTE_INSTANCE} --size STANDARD_DS1_V2 --type Co
 # Create compute cluster
 # echo "Creating a compute cluster with name: " $COMPUTE_CLUSTER
 # az ml compute create --name ${COMPUTE_CLUSTER} --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute 
+
+# Create data assets
+echo "Create training data asset:"
+az ml data create --type uri_file --name diabetes-dev-folder --path  ./experimentation/data/
+
