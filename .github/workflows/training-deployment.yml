@@ -1,4 +1,4 @@
-name: Pull request
+name: Train in dev and prod
 
 on:
   workflow_dispatch:
