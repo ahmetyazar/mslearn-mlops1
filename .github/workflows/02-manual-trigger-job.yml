@@ -6,6 +6,7 @@ on:
 jobs:
   train:
     runs-on: ubuntu-latest
+    environment: "AZURE DEV"
     steps:
     - name: Check out repo
       uses: actions/checkout@main
@@ -16,6 +17,6 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Train the model
-      run: az ml job create --file src/job.yml -g rg-dp100-l91c18a722d864a2188 -w mlw-dp100-l91c18a722d864a2188
+      run: az ml job create --file src/job.yml -g rg-dp100-l31ee2fb33446402285 -w mlw-dp100-l31ee2fb33446402285
 
 
