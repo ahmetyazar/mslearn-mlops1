@@ -17,7 +17,7 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Train the model
-      run: az ml job create --file src/job.yml -g rg-dp100-l31ee2fb33446402285 -w mlw-dp100-l31ee2fb33446402285 --name dev-train
+      run: az ml job create --file src/job.yml -g rg-dp100-l31ee2fb33446402285 -w mlw-dp100-l31ee2fb33446402285
     - name: Stream the training logs
       run: az ml job stream --name dev-train -g rg-dp100-l31ee2fb33446402285 -w mlw-dp100-l31ee2fb33446402285
   train-prod:
